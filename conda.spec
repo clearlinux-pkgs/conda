@@ -4,7 +4,7 @@
 #
 Name     : conda
 Version  : 4.6.8
-Release  : 4
+Release  : 5
 URL      : https://github.com/conda/conda/archive/4.6.8.tar.gz
 Source0  : https://github.com/conda/conda/archive/4.6.8.tar.gz
 Summary  : No detailed summary available
@@ -125,13 +125,13 @@ python3 components for the conda package.
 
 %build
 ## build_prepend content
-echo 4.6.8 > conda/.version
+echo %{version} > conda/.version
 ## build_prepend end
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1553720635
+export SOURCE_DATE_EPOCH=1553721136
 export LDFLAGS="${LDFLAGS} -fno-lto"
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
