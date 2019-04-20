@@ -4,7 +4,7 @@
 #
 Name     : conda
 Version  : 4.6.14
-Release  : 11
+Release  : 12
 URL      : https://github.com/conda/conda/archive/4.6.14/conda-4.6.14.tar.gz
 Source0  : https://github.com/conda/conda/archive/4.6.14/conda-4.6.14.tar.gz
 Summary  : No detailed summary available
