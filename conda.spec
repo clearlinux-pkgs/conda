@@ -4,7 +4,7 @@
 #
 Name     : conda
 Version  : 4.7.2
-Release  : 17
+Release  : 18
 URL      : https://github.com/conda/conda/archive/4.7.2/conda-4.7.2.tar.gz
 Source0  : https://github.com/conda/conda/archive/4.7.2/conda-4.7.2.tar.gz
 Summary  : No detailed summary available
@@ -65,7 +65,7 @@ Requires: pyserial
 Requires: pytz
 Requires: pyxdg
 Requires: requests
-Requires: ruamel-yaml
+Requires: ruamel.yaml
 Requires: secretstorage
 Requires: setuptools
 Requires: six
@@ -127,7 +127,7 @@ BuildRequires : pyserial
 BuildRequires : pytz
 BuildRequires : pyxdg
 BuildRequires : requests
-BuildRequires : ruamel-yaml
+BuildRequires : ruamel.yaml
 BuildRequires : secretstorage
 BuildRequires : setuptools
 BuildRequires : six
@@ -139,12 +139,8 @@ BuildRequires : virtualenv
 BuildRequires : zope.interface
 
 %description
-conda.common
-------------
-Code in ``conda.common`` is not conda-specific.  Technically, it sits *aside* the application
-stack and not *within* the stack.  It is able to stand independently on its own.
-The *only* allowed imports of conda code in ``conda.common`` modules are imports of other
-``conda.common`` modules and imports from ``conda._vendor``.
+conda.pydata.org. If you update this file, be sure to cd to the web
+directory and run ``make html; make live``
 
 %package bin
 Summary: bin components for the conda package.
@@ -192,7 +188,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1560263963
+export SOURCE_DATE_EPOCH=1560272331
+export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
