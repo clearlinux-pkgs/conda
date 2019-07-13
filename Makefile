@@ -1,5 +1,5 @@
 PKG_NAME := conda
-URL = https://github.com/conda/conda/archive/4.7.6/conda-4.7.6.tar.gz
+URL = https://github.com/conda/conda/archive/4.7.7/conda-4.7.7.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
