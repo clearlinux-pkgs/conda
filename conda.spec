@@ -4,7 +4,7 @@
 #
 Name     : conda
 Version  : 4.7.6
-Release  : 22
+Release  : 23
 URL      : https://github.com/conda/conda/archive/4.7.6/conda-4.7.6.tar.gz
 Source0  : https://github.com/conda/conda/archive/4.7.6/conda-4.7.6.tar.gz
 Summary  : No detailed summary available
