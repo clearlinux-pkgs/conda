@@ -4,7 +4,7 @@
 #
 Name     : conda
 Version  : 4.7.12
-Release  : 28
+Release  : 29
 URL      : https://github.com/conda/conda/archive/4.7.12/conda-4.7.12.tar.gz
 Source0  : https://github.com/conda/conda/archive/4.7.12/conda-4.7.12.tar.gz
 Summary  : No detailed summary available
