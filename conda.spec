@@ -4,7 +4,7 @@
 #
 Name     : conda
 Version  : 4.7.12
-Release  : 31
+Release  : 32
 URL      : https://github.com/conda/conda/archive/4.7.12/conda-4.7.12.tar.gz
 Source0  : https://github.com/conda/conda/archive/4.7.12/conda-4.7.12.tar.gz
 Summary  : No detailed summary available
@@ -30,7 +30,6 @@ Requires: chardet
 Requires: cheroot
 Requires: click
 Requires: cloudpickle
-Requires: configparser
 Requires: cryptography
 Requires: cssselect
 Requires: distributed
@@ -90,7 +89,6 @@ BuildRequires : chardet
 BuildRequires : cheroot
 BuildRequires : click
 BuildRequires : cloudpickle
-BuildRequires : configparser
 BuildRequires : cryptography
 BuildRequires : cssselect
 BuildRequires : distributed
@@ -175,6 +173,7 @@ python3 components for the conda package.
 
 %prep
 %setup -q -n conda-4.7.12
+cd %{_builddir}/conda-4.7.12
 
 %build
 ## build_prepend content
@@ -184,7 +183,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570833788
+export SOURCE_DATE_EPOCH=1573846342
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
