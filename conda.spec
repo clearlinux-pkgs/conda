@@ -4,7 +4,7 @@
 #
 Name     : conda
 Version  : 4.8.1
-Release  : 35
+Release  : 36
 URL      : https://github.com/conda/conda/archive/4.8.1/conda-4.8.1.tar.gz
 Source0  : https://github.com/conda/conda/archive/4.8.1/conda-4.8.1.tar.gz
 Summary  : No detailed summary available
