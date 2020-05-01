@@ -4,7 +4,7 @@
 #
 Name     : conda
 Version  : 4.8.3
-Release  : 39
+Release  : 40
 URL      : https://github.com/conda/conda/archive/4.8.3/conda-4.8.3.tar.gz
 Source0  : https://github.com/conda/conda/archive/4.8.3/conda-4.8.3.tar.gz
 Summary  : OS-agnostic, system-level binary package manager.
@@ -41,7 +41,6 @@ Requires: graphviz
 Requires: h5py
 Requires: html5lib
 Requires: idna
-Requires: ipaddress
 Requires: jaraco.functools
 Requires: keyring
 Requires: linecache2
@@ -100,7 +99,6 @@ BuildRequires : graphviz
 BuildRequires : h5py
 BuildRequires : html5lib
 BuildRequires : idna
-BuildRequires : ipaddress
 BuildRequires : jaraco.functools
 BuildRequires : keyring
 BuildRequires : linecache2
@@ -133,12 +131,8 @@ BuildRequires : virtualenv
 BuildRequires : zope.interface
 
 %description
-conda.common
-------------
-Code in ``conda.common`` is not conda-specific.  Technically, it sits *aside* the application
-stack and not *within* the stack.  It is able to stand independently on its own.
-The *only* allowed imports of conda code in ``conda.common`` modules are imports of other
-``conda.common`` modules and imports from ``conda._vendor``.
+conda.pydata.org. If you update this file, be sure to cd to the web
+directory and run ``make html; make live``
 
 %package bin
 Summary: bin components for the conda package.
@@ -191,15 +185,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1584294688
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1588358241
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
