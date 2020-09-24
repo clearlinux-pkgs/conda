@@ -4,7 +4,7 @@
 #
 Name     : conda
 Version  : 4.8.5
-Release  : 42
+Release  : 43
 URL      : https://github.com/conda/conda/archive/4.8.5/conda-4.8.5.tar.gz
 Source0  : https://github.com/conda/conda/archive/4.8.5/conda-4.8.5.tar.gz
 Summary  : OS-agnostic, system-level binary package manager.
