@@ -1,0 +1,46 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Patrick McCarty <patrick.mccarty@intel.com>
+Date: Wed, 31 Mar 2021 18:00:06 +0000
+Subject: [PATCH] Revert "Use ruamel_yaml_conda, not ruamel_yaml nor
+ ruamel.yaml. What a mess this is"
+
+This reverts commit 25283d8c34bfca0253585db4cf99e8bac92ce91c.
+---
+ conda.recipe/run_test.sh | 5 ++---
+ setup.py                 | 4 ++--
+ 2 files changed, 4 insertions(+), 5 deletions(-)
+
+diff --git a/conda.recipe/run_test.sh b/conda.recipe/run_test.sh
+index b32b4d34e..6e7f3e905 100644
+--- a/conda.recipe/run_test.sh
++++ b/conda.recipe/run_test.sh
+@@ -12,11 +12,10 @@ export TEST_PLATFORM=$(python -c "import sys; print('win' if sys.platform.starts
+ export PYTHONHASHSEED=$(python -c "import random as r; print(r.randint(0,4294967296))") && echo "PYTHONHASHSEED=$PYTHONHASHSEED"
+ env | sort
+ conda info
+-conda create -y -p ./built-conda-test-env python=3.9
++conda create -y -p ./built-conda-test-env python=3.5
+ conda activate ./built-conda-test-env
+ echo $CONDA_PREFIX
+ [ "$CONDA_PREFIX" = "$PWD/built-conda-test-env" ] || exit 1
+-[ $(python -c "import sys; print(sys.version_info[1])") = 9 ] || exit 1
+-python -c '__requires__ = ["ruamel_yaml_conda >= 0.11.14"]; import pkg_resources' || exit 1
++[ $(python -c "import sys; print(sys.version_info[1])") = 5 ] || exit 1
+ conda deactivate
+ py.test tests -m "not integration and not installed" -vv
+diff --git a/setup.py b/setup.py
+index 5c6b8169d..7a9bb004a 100644
+--- a/setup.py
++++ b/setup.py
+@@ -41,9 +41,9 @@ install_requires = [
+ ]
+ 
+ if os.getenv('CONDA_BUILD', None) == '1':
+-    install_requires.append("ruamel_yaml_conda >=0.11.14")
++    install_requires.append("ruamel_yaml >=0.11.14")
+ else:
+-    install_requires.append("ruamel_yaml_conda >=0.11.14")
++    install_requires.append("ruamel.yaml >=0.11.14")
+ 
+ 
+ def package_files(*root_directories):

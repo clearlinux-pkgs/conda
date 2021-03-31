@@ -4,7 +4,7 @@
 #
 Name     : conda
 Version  : 4.10.0
-Release  : 51
+Release  : 52
 URL      : https://github.com/conda/conda/archive/4.10.0/conda-4.10.0.tar.gz
 Source0  : https://github.com/conda/conda/archive/4.10.0/conda-4.10.0.tar.gz
 Summary  : OS-agnostic, system-level binary package manager.
@@ -133,6 +133,7 @@ BuildRequires : traceback2
 BuildRequires : urllib3
 BuildRequires : virtualenv
 BuildRequires : zope.interface
+Patch1: 0001-Revert-Use-ruamel_yaml_conda-not-ruamel_yaml-nor-rua.patch
 
 %description
 conda.pydata.org. If you update this file, be sure to cd to the web
@@ -180,6 +181,7 @@ python3 components for the conda package.
 %prep
 %setup -q -n conda-4.10.0
 cd %{_builddir}/conda-4.10.0
+%patch1 -p1
 
 %build
 ## build_prepend content
@@ -189,7 +191,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1617212596
+export SOURCE_DATE_EPOCH=1617213810
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
