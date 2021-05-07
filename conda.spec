@@ -4,7 +4,7 @@
 #
 Name     : conda
 Version  : 4.10.1
-Release  : 54
+Release  : 55
 URL      : https://github.com/conda/conda/archive/4.10.1/conda-4.10.1.tar.gz
 Source0  : https://github.com/conda/conda/archive/4.10.1/conda-4.10.1.tar.gz
 Summary  : OS-agnostic, system-level binary package manager.
