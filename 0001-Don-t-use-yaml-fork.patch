@@ -1,0 +1,29 @@
+From 1dfb8f9f6bb0874c3c7323d958b10da6827d1619 Mon Sep 17 00:00:00 2001
+From: William Douglas <william.douglas@intel.com>
+Date: Thu, 9 Dec 2021 11:20:11 -0800
+Subject: [PATCH] Don't use yaml fork
+
+---
+ setup.py | 6 ------
+ 1 file changed, 6 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 9bfcf4a..c9110f7 100644
+--- a/setup.py
++++ b/setup.py
+@@ -36,12 +36,6 @@ install_requires = [
+     "menuinst ; platform_system=='Windows'",
+ ]
+ 
+-if os.getenv('CONDA_BUILD', None) == '1':
+-    install_requires.append("ruamel_yaml_conda >=0.11.14")
+-else:
+-    install_requires.append("ruamel_yaml_conda >=0.11.14")
+-
+-
+ def package_files(*root_directories):
+     return [
+         os.path.join('..', path, filename)
+-- 
+2.34.1
+

@@ -4,7 +4,7 @@
 #
 Name     : conda
 Version  : 4.11.0
-Release  : 68
+Release  : 69
 URL      : https://github.com/conda/conda/archive/4.11.0/conda-4.11.0.tar.gz
 Source0  : https://github.com/conda/conda/archive/4.11.0/conda-4.11.0.tar.gz
 Summary  : OS-agnostic, system-level binary package manager.
@@ -17,6 +17,7 @@ Requires: conda-python3 = %{version}-%{release}
 Requires: pypi-pycosat
 Requires: ruamel.yaml
 BuildRequires : buildreq-distutils3
+Patch1: 0001-Don-t-use-yaml-fork.patch
 
 %description
 conda.pydata.org. If you update this file, be sure to cd to the web
@@ -64,6 +65,7 @@ python3 components for the conda package.
 %prep
 %setup -q -n conda-4.11.0
 cd %{_builddir}/conda-4.11.0
+%patch1 -p1
 
 %build
 ## build_prepend content
@@ -73,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1639076168
+export SOURCE_DATE_EPOCH=1639077675
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
