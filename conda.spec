@@ -57,7 +57,7 @@ Requires: py
 Requires: pyOpenSSL
 Requires: pyasn1
 Requires: pyasn1-modules
-Requires: pycosat
+Requires: pypi(pycosat)
 Requires: pycparser
 Requires: pyserial
 Requires: pytz
